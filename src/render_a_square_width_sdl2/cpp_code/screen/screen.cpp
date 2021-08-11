@@ -27,7 +27,8 @@ Screen::Screen(std::string windowName, int screenWidth, int screenHeight)
         exit(1);
     }
 
-    SDL_SetRenderDrawColor(renderer, 120, 144, 156, 125);
+    SDL_SetRenderDrawColor(renderer, 120, 144, 156, 255);
+    SDL_RenderClear(renderer);
 	// Now clear the current rendering target with the drawing color,
 	// i.e. since the renderer takes up the entire space of the 
 	// window, set the entire renderer to a single color.
@@ -37,16 +38,24 @@ Screen::Screen(std::string windowName, int screenWidth, int screenHeight)
 	
 }
 
+Screen::~Screen()
+{
+    if(renderer)
+    {
+        shutdown();
+    }
+}
+
 void Screen::render()
 {
-    SDL_SetRenderDrawColor(renderer, 120, 144, 156, 255);
-    SDL_RenderClear(renderer);
-
     process_input();
 
     SDL_RenderPresent(renderer);
 
     SDL_Delay(16);
+
+    SDL_SetRenderDrawColor(renderer, 120, 144, 156, 255);
+    SDL_RenderClear(renderer);
 }
 
 void Screen::process_input()
@@ -81,4 +90,9 @@ void Screen::shutdown()
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
     SDL_Quit();
+}
+
+SDL_Renderer *Screen::getRenderer()
+{
+    return renderer;
 }
