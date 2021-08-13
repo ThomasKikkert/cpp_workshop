@@ -5,14 +5,14 @@ cpp = g++
 
 all: clean build_main_c build_main_cpp
 
-build_main_c: c_code/screen/screen.o c_code/square/square.o
-	$(cc) $(cflag) c_code/main.c c_code/screen/screen.o c_code/square/square.o $(sdlFlag) -o main_c
+build_main_c: c_code/screen/screen.o c_code/rectangle/rectangle.o
+	$(cc) $(cflag) c_code/main.c c_code/screen/screen.o c_code/rectangle/rectangle.o $(sdlFlag) -o main_c
 
 screen_:
 	$(cc) -c c_code/screen/screen.c $(sdlFlag) -o screen/screen.o
 
-square_:
-	$(cc) -c c_code/square/square.c $(sdlFlag) -o square/square.o
+rectangle_:
+	$(cc) -c c_code/rectangle/rectangle.c $(sdlFlag) -o rectangle/rectangle.o
 	
 build_main_cpp: cpp_code/screen/screen.o cpp_code/color/color.o cpp_code/rectangle/rectangle.o
 	$(cpp) cpp_code/main.cpp cpp_code/screen/screen.o cpp_code/color/color.o \
