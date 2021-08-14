@@ -1,7 +1,7 @@
 cpp = g++
 sdlFlag = `sdl2-config --cflags --libs` -lSDL2 -lSDL2_mixer -lSDL2_image -lSDL2_ttf
 
-all: clean build_main
+all: clean main
 
 main: screen/screen.o texture/texture.o
 	$(cpp) main.cpp screen/screen.o texture/texture.o $(sdlFlag) -o main
