@@ -14,6 +14,8 @@ build_all:
 	cd src/get_started_with_sdl2/ && make
 	cd src/render_a_square_width_sdl2/ && make
 	cd src/render_a_texture_width_sdl2/ && make
+	cd src/simulating_physics_with_sdl2/ && make
 	ls -lsa src/get_started_with_sdl2 | grep main_
 	ls -lsa src/render_a_square_width_sdl2 | grep main_
 	ls -lsa src/render_a_texture_width_sdl2 | grep main
+	ls -lsa src/simulating_physics_with_sdl2 | grep main
