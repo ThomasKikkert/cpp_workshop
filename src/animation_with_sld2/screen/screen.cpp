@@ -63,6 +63,7 @@ Screen::~Screen()
 
 void Screen::render()
 {
+    process_input();
 
     SDL_RenderPresent(renderer);
 
@@ -72,6 +73,27 @@ void Screen::render()
     SDL_RenderClear(renderer);
 }
 
+void Screen::process_input()
+{
+    while (SDL_PollEvent(&event))
+    {
+        switch (event.type)
+        {
+        case SDL_QUIT:
+            shutdown();
+            exit(0);
+            break;
+        case SDL_KEYDOWN:
+            // https://wiki.libsdl.org/CategoryKeyboard
+            // https://wiki.libsdl.org/SDL_Scancode
+            shutdown();
+            exit(0);
+            break;
+        default:
+            return;
+        }
+    }
+}
 
 void Screen::shutdown()
 {

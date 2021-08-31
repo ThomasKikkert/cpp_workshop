@@ -17,6 +17,7 @@ private:
     const int FPS = 60;
     uint32_t *startingTick;
 
+    void process_input();
     void capFrameRate();
 
 public:
