@@ -85,6 +85,17 @@ void Dvd_logo::updatePosition()
             xSpeed = -2.0f;
         }
     }
+    if (!(3 > ySpeed && ySpeed > 1) && !(ySpeed > -3 && -1 > ySpeed))
+    {
+        if (ySpeed > 0)
+        {
+            ySpeed = 2.0f;
+        }
+        else
+        {
+            ySpeed = -2.0f;
+        }
+    }
 
     x += (int)xSpeed;
     y += (int)ySpeed;
