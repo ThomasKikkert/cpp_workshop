@@ -1,7 +1,6 @@
 # Beginnen met SDL2 in CPP
 
 In deze folder is de src code voor het dvd logo van de muren weerkaatst van een afbeelding met sdl2.
-Bij het maken van de code is rekening gehouden met het gebruiken voor overerving.
 
 ## build
 
