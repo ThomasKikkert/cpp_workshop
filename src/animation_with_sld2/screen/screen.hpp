@@ -13,11 +13,9 @@ class Screen
 private:
     SDL_Window *window = NULL;
     SDL_Renderer *renderer = NULL;
-    SDL_Event event;
     const int FPS = 60;
     uint32_t *startingTick;
 
-    void process_input();
     void capFrameRate();
 
 public:

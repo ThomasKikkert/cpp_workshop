@@ -74,27 +74,15 @@ void Dvd_logo::checkForBorderCollision()
 
 void Dvd_logo::updatePosition()
 {
-    if ((xSpeed > 3 && 1 < xSpeed) || (xSpeed < -3 && -1 > xSpeed))
+    if (!(3 > xSpeed && xSpeed > 1) && !(xSpeed > -3 && -1 > xSpeed))
     {
-        if (xSpeed)
+        if (xSpeed > 0)
         {
             xSpeed = 2.0f;
         }
         else
         {
             xSpeed = -2.0f;
-        }
-    }
-
-    if ((ySpeed > 3 && 1 < ySpeed) || (ySpeed < -3 && -1 > ySpeed))
-    {
-        if (ySpeed)
-        {
-            ySpeed = 2.0f;
-        }
-        else
-        {
-            ySpeed = -2.0f;
         }
     }
 
