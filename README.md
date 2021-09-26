@@ -9,3 +9,9 @@ Aan de hand van voorbeeld code & met uitleg.
 ```bash
 sudo make install
 ```
+
+## compile all de code
+
+```
+make build_all
+```
